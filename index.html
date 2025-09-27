@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moody Portrait Studio</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0",
+    "safevalues/": "https://aistudiocdn.com/safevalues@^1.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <header>
+      <h1>Moody Portrait Studio</h1>
+      <p>Upload a photo to give it a professional, moody studio look.</p>
+    </header>
+    <main>
+      <div class="container">
+        <div class="panel input-panel">
+          <h2>Original Image</h2>
+          <div class="image-container" id="original-image-container">
+            <img id="original-image" alt="Your uploaded image will appear here." />
+            <label for="image-upload" class="upload-label">
+              <i class="fas fa-upload"></i>
+              <span>Click to Upload Image</span>
+            </label>
+          </div>
+          <input type="file" id="image-upload" accept="image/*" hidden />
+          <button id="generate-btn" disabled>
+            <i class="fas fa-magic"></i> Apply Style
+          </button>
+        </div>
+        <div class="panel output-panel">
+          <h2>Styled Image</h2>
+          <div class="image-container" id="output-image-container">
+            <img id="output-image" alt="Your styled image will appear here." />
+            <div id="loader" class="loader" style="display: none">
+              <div class="spinner"></div>
+              <p>Applying style... This may take a moment.</p>
+            </div>
+            <div id="placeholder" class="placeholder">
+                <i class="fas fa-image"></i>
+                <p>Your styled image will appear here</p>
+            </div>
+          </div>
+          <a id="download-btn" class="button" href="#" download="styled-image.png" style="display: none;">
+            <i class="fas fa-download"></i> Download Image
+          </a>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

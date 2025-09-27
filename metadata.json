@@ -1,0 +1,6 @@
+{
+  "name": "Moody Photo IA Editor",
+  "description": "Upload a photo to give it a professional, moody studio look using AI.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
